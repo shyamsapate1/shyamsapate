@@ -1,0 +1,758 @@
+@font-face {
+	font-family: "Dynalight-Regular";
+	src: url(../fonts/Dynalight-Regular.ttf);
+}
+* {
+	font-family: 'Merriweather', serif;
+	font-size: 16px;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+div, input, textarea, a {
+	box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+}
+body {
+	background: #eee;
+}
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: rgba(39, 64, 70, 0.1);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.clearboth {
+	clear: both;
+}
+.div-gap {
+	height: 50px;
+}
+#container {
+	background: #fff;
+	box-shadow: 0px 2px 10px 2px #ccc;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 15px;
+	width: 970px;
+}
+.section_title {
+	border-bottom: 1px solid #ddd;
+	margin: 0 0 15px 0;
+	padding: 50px 0 15px 0;
+}
+
+/* ============================================================================ FONTS =====*/
+
+h1 {
+	color: #274046;
+	display: inline-block;
+	font-size: 24px;
+}
+h2 {
+	font-size: 24px;
+}
+h3 {
+	font-size: 20px;
+	padding: 0 0 15px 0;
+}
+p {
+	line-height: 26px;
+}
+strong {
+	font-weight: 700;
+}
+
+/* ========================================================================== SPRITE =====*/
+
+.sprite {
+	background: url("../images/sprite_icons.png");
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+.sprite-facebook {
+	width: 16px;
+	height: 16px;
+	background-position: -5px -5px;
+}
+.sprite-twitter {
+	width: 16px;
+	height: 16px;
+	background-position: -57px -5px;
+}
+.sprite-google-plus {
+	width: 16px;
+	height: 16px;
+	background-position: -31px -5px;
+}
+.sprite-linked-in {
+	width: 16px;
+	height: 16px;
+	background-position: -39px -31px;
+}
+.sprite-gotop {
+	width: 24px;
+	height: 24px;
+	background-position: -5px -31px;
+}
+
+/* ========================================================================= BUTTONS =====*/
+
+.btn {
+	border-radius: 0px;
+	color: #fff;
+	font-size: 18px;
+	padding: 4px 15px;
+	text-decoration: none;
+}
+.btn-submit {
+	background: #274046;
+	border: 1px solid transparent;
+	color: #ccc;
+	cursor: pointer;
+	display: inline-block;
+	padding: 7px 30px;
+	-webkit-transition: background 0.3s;
+	-moz-transition: background 0.3s;
+	transition: background 0.3s;
+}
+.btn-submit:focus,
+.btn-submit:hover {
+	background: #000;
+}
+.btn-download {
+	border: 4px solid #770d3e;
+	color: #770d3e;
+	display: inline-block;
+	padding: 12px 30px;
+	-webkit-transition: background 0.3s;
+	-moz-transition: background 0.3s;
+	transition: background 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+.btn-download:before {
+	content: "";
+	width: 200px;
+	height: 200px;
+	background: #fff;
+	position: absolute;
+	left: 97%;
+	top: 0px;
+	-webkit-transform: rotate(-30deg);				/* Chrome, Safari, new version of Opera */
+	-moz-transform: rotate(-30deg);					/* Mozilla */
+	-ms-transform: rotate(-30deg);					/* IE 9 */
+	-o-transform: rotate(-30deg);					/* Older version of Opera */
+	transform: rotate(-30deg);
+	-webkit-transition: all 1.5s;					/* Safari */
+	-moz-transition: all 1.5s;						/* Mozilla */
+	transition: all 1.5s;
+}
+.btn-download:first-child,
+.btn-download:focus,
+.btn-download:hover {
+	background: #770d3e url(../images/overlay.png);
+	color: #fff;
+}
+.btn-download:focus:before,
+.btn-download:hover:before {
+	top: -100px;
+}
+.social a {
+	border: 1px solid #333;
+	border-radius: 50%;
+	color: #333;
+    display: inline-block;
+    height: 35px;
+	position: relative;
+    text-align: center;
+    width: 35px;
+}
+.social a i {
+	left: 11px;
+	position: absolute;
+	top: 10px;
+}
+
+/* =================================================================== NAVBAR-BANNER =====*/
+
+#navbar {
+	border-radius: 10px;
+	padding: 0px 0;
+	position: fixed;
+	right: 15px;
+	top: 50px;
+}
+#navbar li {
+	list-style-type: none;
+}
+#navbar li a {
+	background: #ccc;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	color: #770d3e;
+	display: inline-block;
+	font-size: 16px;
+	letter-spacing: 5px;
+	margin-bottom: 1px;
+	min-width: 150px;
+	padding: 5px 7px;
+	text-decoration: none;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+#navbar li a:focus,
+#navbar li a:hover,
+#navbar li a.active {
+	background: #274046;
+	color: #eee;
+	letter-spacing: 1px;
+}
+#banner {
+	background: #274046 url(../images/overlay.png);
+	background-attachment: fixed;
+	background-position: 40% 0%;
+	margin-left: -15px;
+	margin-right: -15px;
+	min-height: 250px;
+}
+#banner #banner_title {
+	color: #eee;
+	font-family: "Dynalight-Regular";
+	font-size: 24px;
+	line-height: 1;
+	padding: 163px 15px 0 0;
+	text-align: right;
+	text-shadow: 2px 2px 2px #333;
+}
+
+/* =========================================================================== INTRO =====*/
+
+#intro .intro-details strong {
+	display: inline-block;
+	width: 100px;
+}
+#intro .heading {
+	font-size: 24px;
+	padding: 50px 0 15px 0;
+	border-bottom: 1px solid #ddd;
+}
+#intro .heading span {
+	font-size: 16px;
+	display: block;
+}
+#intro #profile_pic {
+	float: left;
+	margin: -50px 30px 15px 15px;
+	border: 1px solid #ccc;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	height: 440px;
+}
+#intro #profile_pic img {
+	width: 235px;
+	border: 10px solid #FFF;
+}
+#intro .intro-details {
+	color: #777;
+	font-style: italic;
+	font-weight: 300;
+	line-height: 2;
+	padding: 30px 0 30px 0;
+}
+#intro .intro-details a {
+	border-bottom: 1px dashed #ccc;
+	color: #555;
+	text-decoration: none;
+}
+#intro .intro-details a:focus,
+#intro .intro-details a:hover {
+	border-bottom: 1px solid #ccc;
+}
+
+/* ================================================================= WORK_EXPERIENCE =====*/
+
+#work_experience .block {
+	background: #fcfcfc;
+	box-shadow: 0 1px 1px #ccc;
+	margin: 30px 0;
+	padding: 50px 0;
+}
+#work_experience .block .left {
+	color: #fff;
+	float: left;
+	width: 30%;
+	text-align: right;
+	padding-right: 30px;
+	box-sizing: border-box;
+}
+#work_experience .block .right {
+	float: left;
+	padding-right: 70px;
+	width: 70%;
+	box-sizing: border-box;
+}
+#work_experience .block .right .comp-name {
+	margin-bottom: 10px;
+}
+#work_experience .block .right .work-desc {
+	font-style: italic;
+}
+#work_experience .block .left div:first-child {
+	display: inline-block;
+	background: #274046;
+	margin: 0 0 5px 50px;
+	padding: 5px 15px;
+}
+#work_experience .block .left div:last-child {
+	display: inline-block;
+	background: #770d3e;
+	padding: 5px 15px;
+}
+
+/* ======================================================================= PORTFOLIO =====*/
+
+#portfolio .inner-wrapper {
+	overflow: auto;
+}
+#portfolio .wrapper {
+	width: 120%;
+	height: 500px;
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+#portfolio .block {
+	box-sizing: border-box;
+	float: left;
+	height: 250px;
+	padding: 100px 15px;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	width: 16.668%;
+}
+#portfolio .block:before {
+	background: #274046;
+	box-sizing: border-box;
+	color: #eee;
+	content: "";
+	height: 250px;
+	left: -100%;
+	padding: 167px 0 0 15px;
+	position: absolute;
+	top: -250px;
+	text-align: left;
+	-webkit-transform: scale(1,1.7);
+	-moz-transform: scale(1,1.7);
+	-ms-transform: scale(1,1.7);
+	-o-transform: scale(1,1.7);
+	transform: scale(1,1.7);
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+	width: 100%;
+}
+#portfolio .block.angular:before {
+	content: "ANGULAR MINDS";
+}
+#portfolio .block.dimension3:before {
+	content: "DIMENSION3";
+}
+#portfolio .block.campus:before {
+	content: "CAMPUS DRIVERS";
+}
+#portfolio .block.china:before {
+	content: "CHINA SOURCING8";
+}
+#portfolio .block.keyedu:before {
+	content: "KEY EDU SOFT";
+}
+#portfolio .block.ganesh:before {
+	content: "GANESH CONSTRS";
+}
+#portfolio .block.navnagar:before {
+	content: "NAVNAGAR SANSTHA";
+}
+#portfolio .block.adsuls:before {
+	content: "ADSULS GROUP";
+}
+#portfolio .block.liveexam:before {
+	content: "Live Exam Center";
+}
+#portfolio .block.easydry:before {
+	content: "Easy Dry Clotheslines";
+}
+#portfolio .block.inxtion:before {
+	content: "Inxtion";
+}
+#portfolio .block.purpleattire:before {
+	content: "Purple Attire";
+}
+#portfolio .block:focus:before,
+#portfolio .block:hover:before {
+	top: 0px;
+	left: 0%;
+}
+#portfolio .block.angular {
+	background: #F3F3F3;
+}
+#portfolio .block.dimension3 {
+	background: #F7AB49	;
+}
+#portfolio .block.campus {
+	background: #fff;
+}
+#portfolio .block.adsuls {
+	background: #0A2A37;
+}
+#portfolio .block.navnagar {
+	background: #672214;
+}
+#portfolio .block.liveexam {
+	background: #006699;
+}
+#portfolio .block.ganesh {
+	background: #1E1F20 url(../images/ganesh-bg.png);
+}
+#portfolio .block.keyedu {
+	background: #000;
+}
+#portfolio .block.china {
+	background: #F5F5F5;
+}
+#portfolio .block.inxtion {
+	background: #9C0813;
+}
+#portfolio .block.purple {
+	background: #fff;
+}
+
+/* ========================================================================== SKILLS =====*/
+
+#skills .block .left {
+	float: left;
+	text-align: right;
+	padding: 95px 30px 0 0;
+	width: 20%;
+}
+#skills .block .left div {
+	display: inline-block;
+	background: #274046;
+	color: #fff;
+	padding: 5px 15px;
+}
+#skills .block .right {
+	float: left;
+	padding: 30px 0 0 0;
+	width: 80%;
+}
+#skills .block .right .skill-meter {
+	float: left;
+	text-align: center;
+	width: 25%;
+}
+#skills .block .right .skill-meter p {
+	padding: 15px 0 30px 0;
+}
+#skills .block .right .skill-meter .outer-circle {
+	border: 1px solid #eee;
+	display: inline-block;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	position: relative;
+	z-index: 99;
+}
+#skills .block .right .skill-meter .outer-circle .percent-value {
+	position: absolute;
+	left: 45%;
+	top: 45%;
+}
+
+/* ======================================================================== CONTACTS =====*/
+
+#contact .block {
+	background: #770d3e;
+	margin: 0 -15px;
+	padding: 50px 230px;
+	text-align: center;
+}
+#contact .block .bottom-line button {
+	float: left;
+	margin: 5px 0;
+}
+#contact .block .bottom-line .social-links {
+	float: right;
+	position: relative;
+}
+::-webkit-input-placeholder {
+	color: #770d3e;
+}
+:-moz-placeholder {
+	color: #770d3e;
+}
+::-moz-placeholder {
+	color: #770d3e;
+}
+:-ms-input-placeholder {
+	color: #770d3e;
+}
+#contact input,
+#contact textarea {
+	background: #eee;
+	border: none;
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+#contact input:focus,
+#contact textarea:focus {
+	background: #fff;
+	box-shadow: none;
+}
+#contact input {
+	height: 50px;
+}
+#contact .block h3 {
+	color: #fff;
+	margin: 0 0 10px 0;
+}
+#contact .block .bottom-line .social-links span {
+	background: transparent;
+	color: transparent;
+	display: inline-block;
+	position: absolute;
+	padding: 0;
+	right: 95%;
+	top: 15px;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+	letter-spacing: -2px;
+	width: 100px;
+}
+#contact .social-links a {
+	border-radius: 50%;
+	display: inline-block;
+	height: 50px;
+	margin-left: 5px;
+	padding-top: 15px;
+	text-align: center;
+	width: 50px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+#contact .social-links a.social-btn:focus,
+#contact .social-links a.social-btn:hover {
+	background: #000;
+}
+#contact .social-links a.social-btn:focus span,
+#contact .social-links a.social-btn:hover  span {
+	color: #eee;
+	right: 105%;
+	letter-spacing: 2px;
+}
+#contact .social-links a.facebook {
+	background: #3D5B99;
+}
+#contact .social-links a.twitter {
+	background: #55ACEE;
+}
+#contact .social-links a.google-plus {
+	background: #D95232;
+}
+#contact .social-links a.linked-in {
+	background: #0177B5;
+}
+#gotop {
+	bottom: 10px;
+	cursor: pointer;
+	padding: 5px 0px;
+	right: 20px;
+	padding: 3px 5px;
+	position: fixed;
+}
+
+/* ===================================================================== mobile_view =====*/
+
+/* Extra Small */
+@media (max-width :767px) {
+	.div-gap {
+		height: 15px;
+	}
+	.clearboth-xs {
+		clear: both;
+	}
+	.btn-download {
+		padding: 12px 0;
+	}
+	#container {
+		width: auto;
+	}
+	#intro .buttons a {
+		display: block;
+		margin-bottom: 15px;
+	}
+	#banner {
+		min-height: 200px;
+	}
+	#banner #banner_title {
+		padding: 40px 15px 0 15px;
+		text-align: center;
+	}
+	#intro {
+		text-align: center;
+	}
+	#intro .intro-details {
+		padding: 30px 0;
+		text-align: left;
+	}
+	#intro .intro-details strong {
+		width: 85px;
+	}
+	#intro #profile_pic {
+		display: inline-block;
+		float: none;
+		margin: -50px 15px 15px 15px;
+		position: relative;
+	}
+	#navbar {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		top: auto;
+		width: 100%;
+	}
+	#navbar li a {
+		background: #eee;
+		display: block;
+	}
+	#work_experience .block {
+		background: none;
+		border: none;
+		box-shadow: 0 1px 0 0px #eee;
+		margin: 0 0 15px 0;
+		padding: 0 0 15px 0;
+	}
+	#work_experience .block .left,
+	#work_experience .block .right {
+		text-align: left;
+		float: none;
+		width: auto;
+		padding: 15px 0;
+	}
+	#work_experience .block .left div:first-child {
+		margin: 0;
+	}
+	#portfolio .wrapper {
+		height: 600px;
+		width: 200%;
+	}
+	#portfolio .wrapper .block {
+		float: left;
+		position: relative;
+		padding: 75px 15px;
+		height: 200px;
+		width: 25%;
+	}
+	#portfolio .wrapper .block:before {
+		display: none;
+	}
+	#portfolio .wrapper .block p {
+		display: block;
+		height: 50px;
+		line-height: 1.5;
+	}
+	#skills .block .left,
+	#skills .block .right {
+		float: none;
+		text-align: left;
+		padding: 15px 0;
+		width: auto;
+	}
+	#skills .block .right .skill-meter {
+		width: 50%;
+	}
+	#contact .block {
+		padding: 100px 15px;
+	}
+	#contact .block .bottom-line button,
+	#contact .block .bottom-line .social-links {
+		display: block;
+		margin-bottom: 30px;
+		text-align: center;
+		width: 100%;
+	}
+	#contact .block .bottom-line .social-links span {
+		display: none;
+	}
+}
+
+/* Small */
+@media (min-width :768px) and (max-width:991px) {
+	#banner {
+		height: 200px;
+	}
+	#container {
+		width: 750px;
+	}
+	#profile_pic {
+		position: relative;
+	}
+	#navbar {
+		position: absolute;
+		left: 15px;
+		bottom: 20px;
+		top: auto;
+	}
+	#navbar li a {
+		display: block;
+	}
+	#intro .buttons {
+		margin: 105px 0 30px 15px;
+	}
+	#portfolio .wrapper .block:before {
+		font-size: 12px;
+		padding: 176px 0 0 10px;
+	}
+	#skills .block .left,
+	#skills .block .right {
+		padding: 15px 0;
+		width: 100%;
+		text-align: left;
+	}
+	#contact .block {
+		padding: 100px 130px;
+	}
+}
+/* Medium Device */
+@media (min-width :992px) and (max-width:1200px) {
+	#banner #banner_title {
+		padding: 155px 20px 0 0;
+	}
+	#profile_pic {
+		position: relative;
+	}
+	#navbar {
+		position: absolute;
+		left: 15px;
+		bottom: 20px;
+		top: auto;
+	}
+	#navbar li a {
+		display: block;
+	}
+}
