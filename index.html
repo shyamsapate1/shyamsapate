@@ -29,7 +29,7 @@
 					<ul>
 						<li><a href="javascript:;" data-animate="intro" class="link">About</a></li>
 						<li><a href="javascript:;" data-animate="work_experience" class="link">Work</a></li>
-						<li><a href="javascript:;" data-animate="portfolio" class="link">Portfolio</a></li>
+						<!--<li><a href="javascript:;" data-animate="portfolio" class="link">Portfolio</a></li>-->
 						<li><a href="javascript:;" data-animate="skills" class="link">Skills</a></li>
 						<li><a href="javascript:;" data-animate="contact" class="link">Contact</a></li>
 					</ul>
@@ -48,7 +48,7 @@
 				<strong>ADDRESS : </strong>Pune, Maharashtra, India
 			</div>
 			<div class="buttons">
-				<a href="assets/images/Shyam_Sapate.doc" class="btn btn-download">DOWNLOAD RESUME</a>
+				<a href="assets/images/Shyam_Sapate_CV.doc" class="btn btn-download">DOWNLOAD RESUME</a>
 				<a href="javascript:;" data-animate="portfolio" class="btn btn-download link">VIEW MY WORK</a>
 			</div>
 			<div class="clearboth"></div>
@@ -82,7 +82,7 @@
 						Cuelogic Technologies Pvt. Ltd
 					</p>
 					<p class="work-desc">
-						Working in friendly and open environment. Working with 
+						Worked in friendly and open environment. Worked with 
 						technologies like HTML5, CSS3, Bootstrap3, jQuery Technologies.
 					</p>
 				</div>
@@ -172,7 +172,7 @@
 			</div>
 		</div>
 		
-		<div id="portfolio">
+		<!--<div id="portfolio">
 			<h2 class="section_title">PORTFOLIO</h2>
 			<div class="inner-wrapper">
 				<div class="wrapper">
@@ -215,7 +215,7 @@
 					<div class="clearboth"></div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		
 		<div id="skills">
 			<h2 class="section_title">SKILLS</h2>
@@ -281,6 +281,13 @@
 						</span>
 						<p>Angular JS</p>
 					</div>
+					<div class="skill-meter">
+						<span class="outer-circle">
+							<canvas id="angular-percent" width="150" height= "150"></canvas>
+							<span class="percent-value">60%</span>
+						</span>
+						<p>Angular</p>
+					</div>
 				</div>
 				<div class="clearboth"></div>
 			</div>
@@ -336,6 +343,7 @@
 		var jquery_percent = document.getElementById("jquery-percent");
 		var javascript_percent = document.getElementById("javascript-percent");
 		var angularjs_percent = document.getElementById("angularjs-percent");
+		var angular_percent = document.getElementById("angular-percent");
 		
 		var ctx_htmlcss_percent = htmlcss_percent.getContext("2d");
 		var ctx_bootstrap_percent = bootstrap_percent.getContext("2d");
@@ -344,6 +352,7 @@
 		var ctx_jquery_percent = jquery_percent.getContext("2d");
 		var ctx_javascript_percent = javascript_percent.getContext("2d");
 		var ctx_angularjs_percent = angularjs_percent.getContext("2d");
+		var ctx_angular_percent = angular_percent.getContext("2d");
 		
 		ctx_htmlcss_percent.beginPath();
 		ctx_htmlcss_percent.arc(70,70,50,0*Math.PI,1.75*Math.PI);
@@ -379,6 +388,11 @@
 		ctx_angularjs_percent.arc(70,70,50,0*Math.PI,1*Math.PI);
 		ctx_angularjs_percent.strokeStyle = "#770d3e";
 		ctx_angularjs_percent.stroke();
+		
+		ctx_angular_percent.beginPath();
+		ctx_angular_percent.arc(70,70,50,0*Math.PI,1.1*Math.PI);
+		ctx_angular_percent.strokeStyle = "#770d3e";
+		ctx_angular_percent.stroke();
 
 
 		$(document).ready(function() {
